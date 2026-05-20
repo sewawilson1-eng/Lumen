@@ -85,27 +85,31 @@ export function Hero() {
 
       <motion.div
         style={{ y, scale }}
-        className="relative mx-auto mt-16 w-full max-w-5xl px-6"
+        className="relative mt-20 w-full"
       >
-        <LampContainer className="h-[560px] min-h-0 rounded-[36px]">
+        <LampContainer className="h-[760px] min-h-0 rounded-none">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
             className="flex flex-col items-center"
           >
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-cyan-300 backdrop-blur">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-cyan-300 backdrop-blur">
               <Sparkles className="h-3 w-3" strokeWidth={2.25} />
               LED-activated whitening
             </span>
-            <h2 className="bg-gradient-to-br from-slate-200 to-slate-400 bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl">
+            <h2 className="bg-gradient-to-br from-slate-100 to-slate-400 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
               The Lumen lamp.
             </h2>
-            <p className="mt-4 max-w-md text-center text-sm leading-relaxed text-slate-400 md:text-base">
+            <p className="mt-5 max-w-xl text-center text-base leading-relaxed text-slate-400 md:text-lg">
               Cool blue 405 nm light, calibrated to accelerate the gel — never warming the tooth.
             </p>
           </motion.div>
         </LampContainer>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white"
+        />
       </motion.div>
     </section>
   );
