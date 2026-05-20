@@ -8,8 +8,14 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lumensmile.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Lumen — Professional teeth whitening in NYC",
     template: "%s · Lumen",
@@ -32,10 +38,10 @@ export const metadata: Metadata = {
     siteName: "Lumen",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-        width: 1200,
-        height: 630,
-        alt: "A brighter smile from Lumen, a NYC teeth whitening studio",
+        url: "/images/ObjectLamp.png",
+        width: 1264,
+        height: 842,
+        alt: "The Lumen professional LED teeth whitening system",
       },
     ],
     type: "website",
@@ -46,9 +52,7 @@ export const metadata: Metadata = {
     title: "Lumen — Professional teeth whitening in NYC",
     description:
       "Up to fourteen shades brighter in one visit. By appointment in the South Bronx.",
-    images: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-    ],
+    images: ["/images/ObjectLamp.png"],
   },
   robots: { index: true, follow: true },
 };
