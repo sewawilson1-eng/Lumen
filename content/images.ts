@@ -11,13 +11,13 @@
 
 export const images = {
   // "The formula" — close-up of the whitening gel.
-  formula: "/images/ObjectCover.png",
+  formula: "/images/ObjectCover.webp",
 
   // "The lamp" — the professional LED whitening lamp product sheet.
-  light: "/images/ObjectLamp.png",
+  light: "/images/ObjectLamp.webp",
 
   // "The studio" — the calm, spa-feeling treatment chair.
-  studio: "/images/ObjectChair.png",
+  studio: "/images/ObjectChair.webp",
 
   // Before/after — close-up smile photos.
   before:
