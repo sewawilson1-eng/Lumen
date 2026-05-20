@@ -36,14 +36,6 @@ export const metadata: Metadata = {
       "Up to fourteen shades brighter in one visit. A private, sanitary studio in the South Bronx. By appointment only.",
     url: "https://lumensmile.com",
     siteName: "Lumen",
-    images: [
-      {
-        url: "/images/ObjectLamp.png",
-        width: 1264,
-        height: 842,
-        alt: "The Lumen professional LED teeth whitening system",
-      },
-    ],
     type: "website",
     locale: "en_US",
   },
@@ -52,7 +44,6 @@ export const metadata: Metadata = {
     title: "Lumen — Professional teeth whitening in NYC",
     description:
       "Up to fourteen shades brighter in one visit. By appointment in the South Bronx.",
-    images: ["/images/ObjectLamp.png"],
   },
   robots: { index: true, follow: true },
 };
