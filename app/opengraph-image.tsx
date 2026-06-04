@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 export const dynamic = "force-static";
 export const alt = "Lumen — Professional teeth whitening in NYC";
@@ -6,6 +8,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const logoBuf = await readFile(path.join(process.cwd(), "public/images/logo.png"));
+  const logoSrc = `data:image/png;base64,${logoBuf.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -61,49 +66,29 @@ export default async function Image() {
           }}
         />
 
-        {/* Cyan eyebrow chip */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "10px 20px",
-            borderRadius: 9999,
-            border: "1px solid rgba(34, 211, 238, 0.35)",
-            background: "rgba(34, 211, 238, 0.1)",
-            color: "#67e8f9",
-            fontSize: 22,
-            fontWeight: 500,
-            letterSpacing: 1,
-            marginTop: 80,
-            marginBottom: 40,
-            zIndex: 10,
-          }}
-        >
-          <div
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: 9999,
-              background: "#22d3ee",
-              boxShadow: "0 0 12px #22d3ee",
-            }}
-          />
-          LED-ACTIVATED WHITENING
-        </div>
+        {/* Logo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logoSrc}
+          width={300}
+          height={300}
+          alt=""
+          style={{ marginTop: 40, zIndex: 10 }}
+        />
 
         {/* Wordmark — Lumen */}
         <div
           style={{
             display: "flex",
-            fontSize: 180,
+            fontSize: 120,
             fontWeight: 700,
-            letterSpacing: -6,
+            letterSpacing: -4,
             background:
               "linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%)",
             backgroundClip: "text",
             color: "transparent",
             lineHeight: 1,
+            marginTop: 16,
             zIndex: 10,
           }}
         >
@@ -114,29 +99,14 @@ export default async function Image() {
         <div
           style={{
             display: "flex",
-            fontSize: 36,
-            fontWeight: 500,
-            color: "#cbd5e1",
-            marginTop: 32,
-            letterSpacing: -0.5,
-            zIndex: 10,
-          }}
-        >
-          Professional teeth whitening
-        </div>
-
-        {/* Location strip */}
-        <div
-          style={{
-            display: "flex",
-            fontSize: 24,
+            fontSize: 28,
             fontWeight: 400,
-            color: "#64748b",
-            marginTop: 16,
+            color: "#94a3b8",
+            marginTop: 24,
             zIndex: 10,
           }}
         >
-          South Bronx, NYC · Up to 14 shades brighter in one visit
+          Professional teeth whitening · South Bronx, NYC
         </div>
       </div>
     ),
