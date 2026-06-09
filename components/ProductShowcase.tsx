@@ -13,7 +13,7 @@ export function ProductShowcase() {
             The service
           </p>
           <h2 className="headline-text text-4xl font-semibold text-foreground sm:text-6xl">
-            Three elements. One quiet visit.
+            Three pieces. One brighter smile.
           </h2>
         </FadeUp>
 
@@ -38,14 +38,33 @@ function ShowcaseRow({ item, priority }: { item: ShowcaseItem; priority: boolean
         )}
         style={item.aspectRatio ? { aspectRatio: item.aspectRatio } : undefined}
       >
-        <Image
-          src={item.image}
-          alt={item.alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          priority={priority}
-          className="object-cover"
-        />
+        {item.gallery ? (
+          <div className="grid h-full w-full grid-cols-2 gap-2 p-2">
+            {item.gallery.map((src) => (
+              <div
+                key={src}
+                className="relative overflow-hidden rounded-2xl bg-white"
+              >
+                <Image
+                  src={src}
+                  alt={item.alt}
+                  fill
+                  sizes="(min-width: 1024px) 280px, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        ) : item.image ? (
+          <Image
+            src={item.image}
+            alt={item.alt}
+            fill
+            sizes="(min-width: 1024px) 560px, 100vw"
+            priority={priority}
+            className="object-cover"
+          />
+        ) : null}
       </FadeUp>
 
       <FadeUp

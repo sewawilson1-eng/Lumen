@@ -4,7 +4,8 @@ export type ShowcaseItem = {
   eyebrow: string;
   headline: string;
   body: string;
-  image: string;
+  image?: string;
+  gallery?: string[];
   alt: string;
   side: "left" | "right";
   aspectRatio?: string;
@@ -30,12 +31,17 @@ export const showcaseItems: ShowcaseItem[] = [
     aspectRatio: "3 / 2",
   },
   {
-    eyebrow: "The studio",
-    headline: "Spa-quiet. Private.",
-    body: "Soft lighting, plants, a single reclined chair. One client at a time — no waiting rooms, no fluorescent lights, no clinical feel. Closer to a facial appointment than anything you'd associate with a dental office.",
-    image: images.studio,
-    alt: "A calm, modern spa-style treatment room with soft natural light",
+    eyebrow: "The result",
+    headline: "Brighter, in one visit.",
+    body: "Four to ten shades lighter is typical. Fourteen is on the table with a full Deluxe session. No sensitivity, no aftercare drama — most clients walk back into their day looking like they did a year of touch-ups in ninety minutes.",
+    gallery: [
+      "/images/gallery-1.webp",
+      "/images/gallery-3.webp",
+      "/images/gallery-5.webp",
+      "/images/gallery-6.webp",
+    ],
+    alt: "Real Lumen client smiles after a single whitening session",
     side: "right",
-    aspectRatio: "1024 / 945",
+    aspectRatio: "1 / 1",
   },
 ];
