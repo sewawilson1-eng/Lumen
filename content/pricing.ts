@@ -1,19 +1,25 @@
 export type PricingTier = {
   name: string;
+  originalPrice: string;
   price: string;
+  savings: string;
   cadence: string;
   description: string;
   features: string[];
   cta: string;
+  badge?: string;
   highlighted: boolean;
 };
 
 export const pricingTiers: PricingTier[] = [
   {
     name: "Essential",
-    price: "$149",
+    originalPrice: "$149",
+    price: "$99",
+    savings: "Save $50",
     cadence: "45 min session",
-    description: "A quick touch-up for already-bright teeth. Perfect before an event or to freshen up your smile.",
+    description:
+      "A quick 45-minute touch-up for clients with already-bright teeth. The maintenance session between full visits.",
     features: [
       "Shade reading & consult",
       "Lip & gum protection",
@@ -22,13 +28,17 @@ export const pricingTiers: PricingTier[] = [
       "Aftercare guidance",
     ],
     cta: "Book Essential",
+    badge: "Touch-up",
     highlighted: false,
   },
   {
     name: "Signature",
-    price: "$199",
+    originalPrice: "$199",
+    price: "$119",
+    savings: "Save $80",
     cadence: "60 min session",
-    description: "The regular maintenance session. Keeps your smile consistently bright with noticeable results every visit.",
+    description:
+      "The everyday upgrade. Two full LED cycles for photo-ready results in an hour.",
     features: [
       "Shade reading & consult",
       "Lip & gum protection",
@@ -37,13 +47,17 @@ export const pricingTiers: PricingTier[] = [
       "Aftercare guidance",
     ],
     cta: "Book Signature",
-    highlighted: true,
+    badge: "Most popular",
+    highlighted: false,
   },
   {
     name: "Deluxe",
-    price: "$249",
+    originalPrice: "$249",
+    price: "$139",
+    savings: "Save $110",
     cadence: "90 min session",
-    description: "The best starting point for first-time clients. Three full cycles for the most dramatic transformation in a single visit.",
+    description:
+      "Recommended for first visits. Three full LED cycles for the most dramatic single-visit transformation.",
     features: [
       "Shade reading & consult",
       "Lip & gum protection",
@@ -52,6 +66,7 @@ export const pricingTiers: PricingTier[] = [
       "Aftercare guidance",
     ],
     cta: "Book Deluxe",
-    highlighted: false,
+    badge: "Best for first visit",
+    highlighted: true,
   },
 ];
