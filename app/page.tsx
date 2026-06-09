@@ -6,6 +6,7 @@ import { ScienceGrid } from "@/components/ScienceGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CandidateQuiz } from "@/components/CandidateQuiz";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { SmileGallery } from "@/components/SmileGallery";
 import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
@@ -23,6 +24,7 @@ export default function HomePage() {
         <ScienceGrid />
         <HowItWorks />
         <BeforeAfterSlider />
+        <SmileGallery />
         <CandidateQuiz />
         <Location />
         <Pricing />
