@@ -1,4 +1,4 @@
-import { MapPin, Lock, Train, Clock } from "lucide-react";
+import { MapPin, Lock, Train, CalendarCheck } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { FadeUp } from "@/components/primitives/FadeUp";
 import { site } from "@/content/site";
@@ -49,18 +49,14 @@ export function Location() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-primary-soft text-primary-dark">
-                  <Clock className="h-4 w-4" strokeWidth={2} />
+                  <CalendarCheck className="h-4 w-4" strokeWidth={2} />
                 </span>
                 <div>
-                  <p className="font-medium text-foreground">Hours</p>
-                  <ul className="mt-1 space-y-0.5 text-[15px] text-muted">
-                    {site.hours.map((h) => (
-                      <li key={h.day}>
-                        <span className="inline-block w-24 text-foreground/70">{h.day}</span>
-                        <span>{h.time}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="font-medium text-foreground">By appointment</p>
+                  <p className="mt-0.5 text-[15px] text-muted">
+                    Book a live, confirmed slot on Square — only times I&apos;m actually
+                    available show up.
+                  </p>
                 </div>
               </li>
             </ul>

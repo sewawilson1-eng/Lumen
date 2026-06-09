@@ -8,18 +8,12 @@ export const site = {
   tagline: "Professional teeth whitening, by appointment.",
   bookingUrl: "https://app.squareup.com/appointments/book/f3aucwgnqde9ju/L2142CKCAKNFB/start",
   email: "hello@lumensmile.com",
-  phone: "(917) 555-0143",
   instagram: "https://instagram.com/lumen.smile",
   location: {
     area: "South Bronx, NYC",
     privacyNote: "Full studio address shared once your appointment is confirmed.",
     nearestTransit: "Steps from the 4 / B / D at 161st St – Yankee Stadium",
   },
-  hours: [
-    { day: "Tue – Fri", time: "11am – 8pm" },
-    { day: "Saturday", time: "10am – 6pm" },
-    { day: "Sun – Mon", time: "By request" },
-  ],
   /**
    * About the specialist. Replace these with your details.
    * Lumen is a cosmetic studio — not a dental office — so credentials emphasize

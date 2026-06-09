@@ -10,7 +10,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "The Service", href: "#service" },
       { label: "How it works", href: "#how" },
       { label: "Before & after", href: "#results" },
-      { label: "Reviews", href: "#reviews" },
+      { label: "Find out if you're a candidate", href: "#quiz" },
     ],
   },
   {
@@ -26,7 +26,6 @@ export const footerColumns: FooterColumn[] = [
     title: "Studio",
     links: [
       { label: "Location", href: "#location" },
-      { label: "Hours", href: "#location" },
       { label: "Contact", href: "#location" },
       { label: "FAQ", href: "#faq" },
     ],

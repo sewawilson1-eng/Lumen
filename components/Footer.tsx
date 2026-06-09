@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { footerColumns } from "@/content/footer";
 import { site } from "@/content/site";
@@ -37,12 +37,6 @@ export function Footer() {
                 <a href={`mailto:${site.email}`} className="flex items-center gap-2 transition-colors hover:text-foreground">
                   <Mail className="h-4 w-4 text-primary-dark" strokeWidth={1.75} />
                   {site.email}
-                </a>
-              </li>
-              <li>
-                <a href={`tel:${site.phone.replace(/[^\d]/g, "")}`} className="flex items-center gap-2 transition-colors hover:text-foreground">
-                  <Phone className="h-4 w-4 text-primary-dark" strokeWidth={1.75} />
-                  {site.phone}
                 </a>
               </li>
             </ul>
