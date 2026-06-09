@@ -16,10 +16,7 @@ export const images = {
   // "The lamp" — the professional LED whitening lamp product sheet.
   light: "/images/ObjectLamp.webp",
 
-  // "The studio" — the calm, spa-feeling treatment chair.
-  studio: "/images/ObjectChair.webp",
-
-  // Before/after — close-up smile photos.
+// Before/after — close-up smile photos.
   before:
     "https://images.unsplash.com/photo-1663182234283-28941e7612da?auto=format&fit=crop&w=1600&q=80",
   after:

@@ -29,13 +29,4 @@ export const showcaseItems: ShowcaseItem[] = [
     side: "left",
     aspectRatio: "3 / 2",
   },
-  {
-    eyebrow: "The studio",
-    headline: "Spa-quiet. Private.",
-    body: "Soft lighting, plants, a single reclined chair. One client at a time — no waiting rooms, no fluorescent lights, no clinical feel. Closer to a facial appointment than anything you'd associate with a dental office.",
-    image: images.studio,
-    alt: "A calm, modern spa-style treatment room with soft natural light",
-    side: "right",
-    aspectRatio: "1024 / 945",
-  },
 ];
