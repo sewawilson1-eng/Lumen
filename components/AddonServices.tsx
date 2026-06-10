@@ -57,6 +57,34 @@ export function AddonServices() {
                 </div>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted">{svc.blurb}</p>
 
+                {svc.gems && (
+                  <div className="mt-6 rounded-2xl bg-primary-soft/60 p-5">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary-dark">
+                      Choose your gem
+                    </p>
+                    <div className="flex flex-wrap gap-2.5">
+                      {svc.gems.map((gem) => (
+                        <span
+                          key={gem.label}
+                          title={`${gem.label} — ${gem.stone}`}
+                          className={cn(
+                            "h-7 w-7 rounded-full ring-1 ring-inset ring-black/10",
+                            gem.clear && "ring-black/15"
+                          )}
+                          style={{
+                            background: gem.clear
+                              ? `radial-gradient(circle at 30% 30%, #ffffff, ${gem.color} 70%, #e2e8f0)`
+                              : gem.color,
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <p className="mt-3 text-[13px] text-muted">
+                      Clear crystal or your birthstone &mdash; January through December.
+                    </p>
+                  </div>
+                )}
+
                 <ul className="mt-6 flex-1 space-y-3">
                   {svc.features.map((f) => (
                     <li
