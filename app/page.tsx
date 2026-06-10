@@ -9,6 +9,7 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { SmileGallery } from "@/components/SmileGallery";
 import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
+import { AddonServices } from "@/components/AddonServices";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -28,6 +29,7 @@ export default function HomePage() {
         <CandidateQuiz />
         <Location />
         <Pricing />
+        <AddonServices />
         <FAQ />
         <FinalCTA />
       </main>
