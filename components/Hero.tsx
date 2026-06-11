@@ -58,9 +58,9 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
         >
-          Professional, enamel-safe teeth whitening in a private spa-style studio. Up to
-          fourteen shades brighter in ninety minutes &mdash; no sensitivity, no clinical
-          feel.
+          Professional, enamel-safe teeth whitening in a private South Bronx studio &mdash;
+          up to fourteen shades brighter in one visit. Plus tooth gems, with grillz on the
+          way.
         </motion.p>
 
         <motion.div
@@ -96,13 +96,14 @@ export function Hero() {
           >
             <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-cyan-300 backdrop-blur">
               <Sparkles className="h-3 w-3" strokeWidth={2.25} />
-              LED-activated whitening
+              Professional teeth whitening
             </span>
             <h2 className="bg-gradient-to-br from-slate-100 to-slate-400 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-              The Lumen lamp.
+              Up to 14 shades brighter.
             </h2>
             <p className="mt-5 max-w-xl text-center text-base leading-relaxed text-slate-400 md:text-lg">
-              Cool blue 405 nm light, calibrated to accelerate the gel — never warming the tooth.
+              Pro-grade LED and an enamel-safe gel in a calm, private studio &mdash; dramatic,
+              sensitivity-free results from your very first visit.
             </p>
           </motion.div>
         </LampContainer>
