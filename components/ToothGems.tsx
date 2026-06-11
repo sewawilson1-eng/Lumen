@@ -24,7 +24,7 @@ export function ToothGems() {
   const detailGlyphColor = isClear ? "#3b9fd9" : sign!.lightFill ? "#334155" : "#ffffff";
 
   return (
-    <section id="more" className="bg-primary-soft py-24 sm:py-32">
+    <section id="gems" className="bg-primary-soft py-24 sm:py-32">
       <Container>
         <FadeUp className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary-dark">
