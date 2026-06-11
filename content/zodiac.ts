@@ -44,3 +44,12 @@ export const toothGemConfig = {
   savings: "Save $30",
   note: "Pick your gem at your appointment — add to any whitening session, or book on its own.",
 };
+
+export const customGemConfig = {
+  originalPrice: "$119",
+  price: "$74",
+  savings: "Save $45",
+  description:
+    "More than one gem? Go custom. Your initial, a cluster, a little constellation — designed with you and bonded safely, enamel-safe.",
+  note: "We'll sketch your design together at your appointment.",
+};

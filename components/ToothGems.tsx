@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Instagram } from "lucide-react";
+import { Instagram, Shapes } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { FadeUp } from "@/components/primitives/FadeUp";
 import { Button } from "@/components/primitives/Button";
-import { zodiacSigns, clearGem, toothGemConfig } from "@/content/zodiac";
+import { zodiacSigns, clearGem, toothGemConfig, customGemConfig } from "@/content/zodiac";
 import { site } from "@/content/site";
 import { cn } from "@/lib/cn";
 
@@ -168,12 +168,64 @@ export function ToothGems() {
                 className="mt-7 block"
               >
                 <Button size="lg" className="w-full">
-                  Book a Tooth Gem
+                  Book a Single Gem
                 </Button>
               </a>
             </div>
           </FadeUp>
         </div>
+
+        {/* Custom design — second tier */}
+        <FadeUp className="mt-5">
+          <div className="flex flex-col gap-6 rounded-3xl bg-white p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+            <div className="flex items-start gap-4">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-soft text-primary-dark">
+                <Shapes className="h-6 w-6" strokeWidth={1.75} />
+              </span>
+              <div>
+                <p className="text-sm font-medium uppercase tracking-widest text-primary-dark">
+                  Custom
+                </p>
+                <h3 className="text-2xl font-semibold text-foreground">Custom Design</h3>
+                <p className="mt-2 max-w-md text-[15px] leading-relaxed text-muted">
+                  {customGemConfig.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="sm:shrink-0 sm:text-right">
+              <div className="flex items-baseline gap-2 sm:justify-end">
+                <span className="text-3xl font-semibold text-foreground">
+                  {customGemConfig.price}
+                </span>
+                <span className="text-lg text-muted line-through decoration-from-font">
+                  {customGemConfig.originalPrice}
+                </span>
+              </div>
+              <div className="mt-2 flex items-center gap-2 sm:justify-end">
+                <span className="inline-block rounded-md bg-primary-soft px-2 py-0.5 text-xs font-semibold text-primary-dark">
+                  {customGemConfig.savings}
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary-dark">
+                  Launch pricing
+                </span>
+              </div>
+              <p className="mt-2 max-w-xs text-[13px] leading-relaxed text-muted sm:ml-auto">
+                {customGemConfig.note}
+              </p>
+              <a
+                href={site.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 block"
+              >
+                <Button size="lg" className="w-full sm:w-auto">
+                  Book a Custom Design
+                </Button>
+              </a>
+            </div>
+          </div>
+        </FadeUp>
 
         {/* Grillz — coming soon */}
         <FadeUp className="mt-12">
