@@ -1,7 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { ServicesPillars } from "@/components/ServicesPillars";
-import { ProductShowcase } from "@/components/ProductShowcase";
 import { ScienceGrid } from "@/components/ScienceGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CandidateQuiz } from "@/components/CandidateQuiz";
@@ -21,7 +20,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <ServicesPillars />
-<ProductShowcase />
         <ScienceGrid />
         <HowItWorks />
         <BeforeAfterSlider />
