@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { footerColumns } from "@/content/footer";
 import { site } from "@/content/site";
@@ -83,6 +83,15 @@ export function Footer() {
               className="transition-colors hover:text-foreground"
             >
               <Instagram className="h-5 w-5" strokeWidth={1.5} />
+            </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="transition-colors hover:text-foreground"
+            >
+              <Facebook className="h-5 w-5" strokeWidth={1.5} />
             </a>
             <a
               href={`mailto:${site.email}`}

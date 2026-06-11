@@ -8,7 +8,8 @@ export const site = {
   tagline: "Professional teeth whitening, by appointment.",
   bookingUrl: "https://app.squareup.com/appointments/book/f3aucwgnqde9ju/L2142CKCAKNFB/start",
   email: "hello@lumensmile.com",
-  instagram: "https://instagram.com/lumen.smile",
+  instagram: "https://www.instagram.com/lumen.smile/",
+  facebook: "https://www.facebook.com/people/Lumensmile/61590348946136/",
   location: {
     area: "South Bronx, NYC",
     privacyNote: "Full studio address shared once your appointment is confirmed.",
