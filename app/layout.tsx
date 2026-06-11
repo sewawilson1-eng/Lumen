@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/lib/seo";
+import { StructuredData } from "@/components/StructuredData";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,44 +10,57 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000");
+const title = "Teeth Whitening, Tooth Gems & Grillz in the South Bronx | Lumen";
+const description =
+  "Professional LED teeth whitening, tooth gems, and grillz (coming soon) at a private South Bronx studio. Up to 14 shades brighter in one visit — by appointment. Serving the Bronx & NYC.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lumen — Professional teeth whitening in NYC",
+    default: title,
     template: "%s · Lumen",
   },
-  description:
-    "Professional, enamel-safe teeth whitening in a private South Bronx studio. Up to fourteen shades brighter in one visit. By appointment only.",
+  description,
+  applicationName: "Lumen",
   keywords: [
+    "teeth whitening Bronx",
+    "teeth whitening near me",
     "teeth whitening NYC",
-    "Bronx teeth whitening",
-    "cosmetic teeth whitening",
-    "professional whitening",
-    "LED whitening",
+    "South Bronx teeth whitening",
+    "LED teeth whitening Bronx",
+    "cosmetic teeth whitening NYC",
+    "tooth gems Bronx",
+    "tooth gems near me",
+    "tooth gems NYC",
+    "birthstone tooth gems",
+    "grillz Bronx",
+    "grillz near me",
+    "custom grillz NYC",
     "Lumen smile",
+    "smile studio Bronx",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Lumen — Professional teeth whitening in NYC",
-    description:
-      "Up to fourteen shades brighter in one visit. A private, sanitary studio in the South Bronx. By appointment only.",
-    url: "https://lumensmile.com",
+    title,
+    description,
+    url: SITE_URL,
     siteName: "Lumen",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumen — Professional teeth whitening in NYC",
-    description:
-      "Up to fourteen shades brighter in one visit. By appointment in the South Bronx.",
+    title,
+    description,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  category: "Health & Beauty",
 };
 
 export default function RootLayout({
@@ -55,7 +70,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-background text-foreground antialiased">{children}</body>
+      <body className="bg-background text-foreground antialiased">
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }
