@@ -5,6 +5,7 @@ import { site } from "./site";
 export type Pillar = {
   icon: LucideIcon;
   name: string;
+  image: string;
   status: "flagship" | "available" | "coming-soon";
   statusLabel: string;
   description: string;
@@ -18,6 +19,7 @@ export const pillars: Pillar[] = [
   {
     icon: Sparkles,
     name: "Teeth Whitening",
+    image: "/images/service-whitening.webp",
     status: "flagship",
     statusLabel: "Our flagship",
     description:
@@ -29,6 +31,7 @@ export const pillars: Pillar[] = [
   {
     icon: Gem,
     name: "Tooth Gems",
+    image: "/images/service-gem.webp",
     status: "available",
     statusLabel: "Now booking",
     description:
@@ -40,6 +43,7 @@ export const pillars: Pillar[] = [
   {
     icon: Crown,
     name: "Grillz",
+    image: "/images/service-grill.webp",
     status: "coming-soon",
     statusLabel: "Coming soon",
     description:

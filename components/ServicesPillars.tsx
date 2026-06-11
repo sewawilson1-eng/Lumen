@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { FadeUp } from "@/components/primitives/FadeUp";
@@ -55,11 +56,29 @@ function Chips({ items, tone = "soft" }: { items: string[]; tone?: "soft" | "mut
   );
 }
 
+function StatusBadge({ pillar }: { pillar: Pillar }) {
+  const comingSoon = pillar.status === "coming-soon";
+  return (
+    <span
+      className={cn(
+        "rounded-full px-3 py-1 text-xs font-medium backdrop-blur",
+        comingSoon
+          ? "bg-foreground/85 text-white"
+          : pillar.status === "flagship"
+            ? "bg-primary text-white"
+            : "bg-white/85 text-primary-dark"
+      )}
+    >
+      {pillar.statusLabel}
+    </span>
+  );
+}
+
 function FeaturedPillar({ pillar }: { pillar: Pillar }) {
   const Icon = pillar.icon;
   return (
-    <FadeUp className="flex flex-col justify-between gap-8 rounded-3xl border-2 border-primary bg-white p-8 sm:flex-row sm:items-center sm:p-10 lg:col-span-2">
-      <div className="max-w-xl">
+    <FadeUp className="flex flex-col overflow-hidden rounded-3xl border-2 border-primary bg-white lg:col-span-2 lg:flex-row">
+      <div className="flex flex-1 flex-col justify-center p-8 sm:p-10">
         <div className="flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white">
             <Icon className="h-6 w-6" strokeWidth={1.75} />
@@ -71,17 +90,29 @@ function FeaturedPillar({ pillar }: { pillar: Pillar }) {
         <h3 className="mt-5 text-2xl font-semibold text-foreground sm:text-3xl">
           {pillar.name}
         </h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-muted">{pillar.description}</p>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+          {pillar.description}
+        </p>
         <div className="mt-5">
           <Chips items={pillar.highlights} />
         </div>
+        <a href={pillar.href} className="mt-8 inline-block">
+          <Button size="lg">
+            {pillar.cta}
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </a>
       </div>
-      <a href={pillar.href} className="shrink-0">
-        <Button size="lg">
-          {pillar.cta}
-          <ArrowRight className="h-4 w-4" />
-        </Button>
-      </a>
+      <div className="relative aspect-[16/11] w-full lg:aspect-auto lg:w-[44%]">
+        <Image
+          src={pillar.image}
+          alt={`${pillar.name} at Lumen`}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
     </FadeUp>
   );
 }
@@ -92,45 +123,41 @@ function StandardPillar({ pillar }: { pillar: Pillar }) {
   return (
     <FadeUp
       delay={0.08}
-      className={cn(
-        "flex flex-col rounded-3xl border bg-white p-8 sm:p-10",
-        comingSoon ? "border-dashed border-border" : "border-border"
-      )}
+      className="flex flex-col overflow-hidden rounded-3xl border border-border bg-white"
     >
-      <div className="flex items-center justify-between gap-3">
-        <span
-          className={cn(
-            "flex h-12 w-12 items-center justify-center rounded-2xl",
-            comingSoon ? "bg-primary-soft text-muted" : "bg-primary-soft text-primary-dark"
-          )}
-        >
-          <Icon className="h-6 w-6" strokeWidth={1.75} />
-        </span>
-        <span
-          className={cn(
-            "rounded-full px-3 py-1 text-xs font-medium",
-            comingSoon ? "bg-foreground text-white" : "bg-primary-soft text-primary-dark"
-          )}
-        >
-          {pillar.statusLabel}
-        </span>
+      <div className="relative aspect-[16/10] w-full">
+        <Image
+          src={pillar.image}
+          alt={`${pillar.name} at Lumen`}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className={cn("object-cover", comingSoon && "opacity-95")}
+        />
+        <div className="absolute right-4 top-4">
+          <StatusBadge pillar={pillar} />
+        </div>
       </div>
 
-      <h3 className="mt-5 text-2xl font-semibold text-foreground">{pillar.name}</h3>
-      <p className="mt-3 text-[15px] leading-relaxed text-muted">{pillar.description}</p>
-      <div className="mt-5 flex-1">
-        <Chips items={pillar.highlights} tone={comingSoon ? "muted" : "soft"} />
-      </div>
+      <div className="flex flex-1 flex-col p-8 sm:p-10">
+        <div className="flex items-center gap-2.5">
+          <Icon className="h-5 w-5 text-primary-dark" strokeWidth={1.75} />
+          <h3 className="text-2xl font-semibold text-foreground">{pillar.name}</h3>
+        </div>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted">{pillar.description}</p>
+        <div className="mt-5 flex-1">
+          <Chips items={pillar.highlights} tone={comingSoon ? "muted" : "soft"} />
+        </div>
 
-      <a
-        href={pillar.href}
-        {...(pillar.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="mt-8 block"
-      >
-        <Button size="lg" variant="ghost" className="w-full">
-          {pillar.cta}
-        </Button>
-      </a>
+        <a
+          href={pillar.href}
+          {...(pillar.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          className="mt-8 block"
+        >
+          <Button size="lg" variant="ghost" className="w-full">
+            {pillar.cta}
+          </Button>
+        </a>
+      </div>
     </FadeUp>
   );
 }
