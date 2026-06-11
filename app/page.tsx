@@ -10,6 +10,7 @@ import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
 import { ToothGems } from "@/components/ToothGems";
 import { FAQ } from "@/components/FAQ";
+import { AreasServed } from "@/components/AreasServed";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 
@@ -29,6 +30,7 @@ export default function HomePage() {
         <Pricing />
         <ToothGems />
         <FAQ />
+        <AreasServed />
         <FinalCTA />
       </main>
       <Footer />
