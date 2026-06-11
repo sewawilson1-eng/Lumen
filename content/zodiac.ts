@@ -39,6 +39,8 @@ export const clearGem = {
 };
 
 export const toothGemConfig = {
-  price: "From $40",
+  originalPrice: "$79",
+  price: "$49",
+  savings: "Save $30",
   note: "Pick your gem at your appointment — add to any whitening session, or book on its own.",
 };

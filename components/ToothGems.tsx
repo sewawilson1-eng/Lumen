@@ -144,9 +144,20 @@ export function ToothGems() {
                 <span className="text-3xl font-semibold text-foreground">
                   {toothGemConfig.price}
                 </span>
-                <span className="text-sm text-muted">· enamel-safe · non-invasive</span>
+                <span className="text-lg text-muted line-through decoration-from-font">
+                  {toothGemConfig.originalPrice}
+                </span>
+                <span className="ml-1 text-sm text-muted">· enamel-safe</span>
               </div>
-              <p className="mt-2 text-[13px] leading-relaxed text-muted">
+              <div className="mt-2 flex items-center gap-2">
+                <span className="inline-block rounded-md bg-primary-soft px-2 py-0.5 text-xs font-semibold text-primary-dark">
+                  {toothGemConfig.savings}
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary-dark">
+                  Launch pricing
+                </span>
+              </div>
+              <p className="mt-3 text-[13px] leading-relaxed text-muted">
                 {toothGemConfig.note}
               </p>
 
