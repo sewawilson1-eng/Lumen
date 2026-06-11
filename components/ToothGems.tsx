@@ -11,6 +11,10 @@ import { cn } from "@/lib/cn";
 
 type Selection = number | "clear";
 
+// U+FE0E forces the "text" presentation of the zodiac glyphs so they render
+// as clean monochrome symbols instead of colorful emoji.
+const asTextGlyph = (g: string) => `${g}︎`;
+
 export function ToothGems() {
   const [selected, setSelected] = useState<Selection>("clear");
 
@@ -46,8 +50,8 @@ export function ToothGems() {
               {zodiacSigns.map((s, i) => {
                 const angle = ((-90 + i * 30) * Math.PI) / 180;
                 const r = 42;
-                // Round to fixed precision so server (Node) and client (V8)
-                // produce identical strings — avoids a hydration mismatch.
+                // Round so server (Node) and client (V8) produce identical
+                // strings — avoids a hydration mismatch.
                 const x = (50 + r * Math.cos(angle)).toFixed(3);
                 const y = (50 + r * Math.sin(angle)).toFixed(3);
                 const isSel = selected === i;
@@ -60,7 +64,7 @@ export function ToothGems() {
                     aria-pressed={isSel}
                     title={`${s.name} · ${s.stone}`}
                     className={cn(
-                      "absolute flex h-11 w-11 items-center justify-center rounded-full text-lg shadow-sm ring-1 ring-inset ring-black/10 transition-[box-shadow,filter] hover:brightness-110 sm:h-12 sm:w-12 sm:text-xl",
+                      "absolute flex h-11 w-11 items-center justify-center rounded-full font-medium shadow-sm ring-1 ring-inset ring-black/10 transition-[box-shadow,filter] hover:brightness-110 sm:h-12 sm:w-12",
                       isSel &&
                         "ring-2 ring-primary-dark ring-offset-2 ring-offset-primary-soft"
                     )}
@@ -72,7 +76,12 @@ export function ToothGems() {
                       color: s.lightFill ? "#334155" : "#ffffff",
                     }}
                   >
-                    <span aria-hidden>{s.symbol}</span>
+                    <span
+                      aria-hidden
+                      className="text-[17px] leading-none [font-variant-emoji:text] sm:text-lg"
+                    >
+                      {asTextGlyph(s.symbol)}
+                    </span>
                   </button>
                 );
               })}
@@ -94,7 +103,9 @@ export function ToothGems() {
                     "radial-gradient(circle at 32% 28%, #ffffff, #eef2f6 68%, #dbe3ec)",
                 }}
               >
-                <span className="text-xl leading-none text-primary-dark">✦</span>
+                <span className="text-xl leading-none text-primary-dark [font-variant-emoji:text]">
+                  {asTextGlyph("✦")}
+                </span>
                 <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted">
                   Clear
                 </span>
@@ -107,10 +118,10 @@ export function ToothGems() {
             <div className="rounded-3xl bg-white p-8 sm:p-10">
               <div className="flex items-center gap-4">
                 <span
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl ring-1 ring-inset ring-black/10"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl ring-1 ring-inset ring-black/10 [font-variant-emoji:text]"
                   style={{ backgroundColor: current.color, color: detailGlyphColor }}
                 >
-                  <span aria-hidden>{current.symbol}</span>
+                  <span aria-hidden>{asTextGlyph(current.symbol)}</span>
                 </span>
                 <div>
                   <p className="text-sm font-medium uppercase tracking-widest text-primary-dark">
