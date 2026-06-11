@@ -1,7 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { ServicesPillars } from "@/components/ServicesPillars";
-import { FeatureStrip } from "@/components/FeatureStrip";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { ScienceGrid } from "@/components/ScienceGrid";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -22,7 +21,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <ServicesPillars />
-        <FeatureStrip />
 <ProductShowcase />
         <ScienceGrid />
         <HowItWorks />
