@@ -3,7 +3,7 @@
  * your live domain differs from the default below.
  */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://lumensmile.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://lumenteeth.com";
 
 // Approximate neighborhood coordinates (South Bronx, near 161st St – Yankee
 // Stadium). Deliberately not the exact studio address, which stays private.

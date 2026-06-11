@@ -7,7 +7,7 @@ export const site = {
   brand: "Lumen",
   tagline: "Professional teeth whitening, by appointment.",
   bookingUrl: "https://app.squareup.com/appointments/book/f3aucwgnqde9ju/L2142CKCAKNFB/start",
-  email: "hello@lumensmile.com",
+  email: "hello@lumenteeth.com",
   instagram: "https://www.instagram.com/lumen.smile/",
   facebook: "https://www.facebook.com/people/Lumensmile/61590348946136/",
   location: {
