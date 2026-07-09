@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
 import { StructuredData } from "@/components/StructuredData";
@@ -10,9 +10,15 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = "Teeth Whitening, Tooth Gems & Grillz in the South Bronx | Lumen";
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const title = "Professional Teeth Whitening in the Bronx (10451) | Lumen";
 const description =
-  "Professional LED teeth whitening, tooth gems, and grillz (coming soon) at a private South Bronx studio. Up to 14 shades brighter in one visit — by appointment. Serving the Bronx & NYC.";
+  "Private, luxury teeth whitening studio in the South Bronx near Yankee Stadium (10451). Enamel-safe LED whitening — up to 14 shades brighter in one visit, from $99. Book online today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,21 +29,19 @@ export const metadata: Metadata = {
   description,
   applicationName: "Lumen",
   keywords: [
-    "teeth whitening Bronx",
     "teeth whitening near me",
-    "teeth whitening NYC",
-    "South Bronx teeth whitening",
-    "LED teeth whitening Bronx",
-    "cosmetic teeth whitening NYC",
-    "tooth gems Bronx",
-    "tooth gems near me",
-    "tooth gems NYC",
-    "birthstone tooth gems",
-    "grillz Bronx",
-    "grillz near me",
-    "custom grillz NYC",
-    "Lumen smile",
-    "smile studio Bronx",
+    "professional teeth whitening near me",
+    "teeth whitening 10451",
+    "best teeth whitening Bronx",
+    "cosmetic teeth whitening",
+    "affordable teeth whitening NYC",
+    "in-person teeth whitening",
+    "teeth whitening in the Bronx",
+    "teeth whitening near Yankee Stadium",
+    "teeth whitening near me today",
+    "LED teeth whitening",
+    "South Bronx teeth whitening studio",
+    "Lumen teeth whitening",
   ],
   alternates: {
     canonical: "/",
@@ -69,8 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-background text-foreground antialiased">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <StructuredData />
         {children}
       </body>

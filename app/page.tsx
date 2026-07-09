@@ -1,6 +1,5 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
-import { ServicesPillars } from "@/components/ServicesPillars";
 import { ScienceGrid } from "@/components/ScienceGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CandidateQuiz } from "@/components/CandidateQuiz";
@@ -8,19 +7,18 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { SmileGallery } from "@/components/SmileGallery";
 import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
-import { ToothGems } from "@/components/ToothGems";
 import { FAQ } from "@/components/FAQ";
 import { AreasServed } from "@/components/AreasServed";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
+import { MobileBookBar } from "@/components/MobileBookBar";
 
 export default function HomePage() {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
-        <ServicesPillars />
         <ScienceGrid />
         <HowItWorks />
         <BeforeAfterSlider />
@@ -28,12 +26,12 @@ export default function HomePage() {
         <CandidateQuiz />
         <Location />
         <Pricing />
-        <ToothGems />
         <FAQ />
         <AreasServed />
         <FinalCTA />
       </main>
       <Footer />
+      <MobileBookBar />
     </>
   );
 }

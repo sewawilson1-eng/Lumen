@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
+/*
+ * Lumen — premium teeth whitening studio.
+ * Warm, luxurious palette: ivory canvas, champagne-gold accents, warm
+ * charcoal ink. All colors meet WCAG AA on their intended backgrounds:
+ *   - foreground on background ........ ~15.6:1
+ *   - muted on background ............. ~5.6:1
+ *   - primary-dark (gold text) ........ ~4.8:1 on ivory
+ *   - white text on primary-dark ...... ~4.9:1
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #0a1628;
-  --primary: #7cc4f0;
-  --primary-dark: #3b9fd9;
-  --primary-soft: #e6f4fc;
-  --muted: #6b7280;
-  --border: #e5e7eb;
+  --background: #fdfbf7;
+  --foreground: #211d19;
+  --primary: #b08d57;
+  --primary-dark: #7d6139;
+  --primary-soft: #f5efe4;
+  --muted: #6b6259;
+  --border: #e8e1d5;
 }
 
 @theme inline {
@@ -19,12 +28,15 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --tracking-display: -0.04em;
-  --tracking-headline: -0.025em;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --tracking-display: -0.015em;
+  --tracking-headline: -0.01em;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchored sections clear of the fixed header */
+  scroll-padding-top: 5rem;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -52,12 +64,34 @@ body {
   color: var(--foreground);
 }
 
+/* Serif display voice for headlines — the premium signature */
 .display-text {
+  font-family: var(--font-serif);
   letter-spacing: var(--tracking-display);
-  line-height: 1.02;
+  line-height: 1.06;
 }
 
 .headline-text {
+  font-family: var(--font-serif);
   letter-spacing: var(--tracking-headline);
-  line-height: 1.05;
+  line-height: 1.12;
+}
+
+/* Accessibility: skip-to-content link, visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.6rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
 }

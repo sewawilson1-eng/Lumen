@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/primitives/Button";
 import { navLinks } from "@/content/nav";
@@ -13,8 +13,6 @@ import { cn } from "@/lib/cn";
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  const bgAlpha = useTransform(scrollY, [0, 200], [0.55, 0.85]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -30,7 +28,7 @@ export function Nav() {
         scrolled ? "border-b border-border/60" : "border-b border-transparent"
       )}
       style={{
-        backgroundColor: `rgba(255, 255, 255, ${scrolled ? 0.85 : 0.55})`,
+        backgroundColor: `rgba(253, 251, 247, ${scrolled ? 0.88 : 0.6})`,
       }}
     >
       <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 sm:px-8">
@@ -80,7 +78,7 @@ export function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden overflow-hidden border-t border-border/60 bg-white/95 backdrop-blur-xl"
+            className="md:hidden overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map((link) => (

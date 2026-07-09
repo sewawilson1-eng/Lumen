@@ -1,77 +1,72 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight, MapPin, ShieldCheck, Star, Clock } from "lucide-react";
 import { Button } from "@/components/primitives/Button";
-import { LampContainer } from "@/components/ui/lamp";
 import { site } from "@/content/site";
 
-export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
+const ease = [0.22, 1, 0.36, 1] as const;
 
+const trust = [
+  { icon: ShieldCheck, label: "Enamel-safe, sensitivity-free" },
+  { icon: Star, label: "Up to 14 shades brighter" },
+  { icon: Clock, label: "One visit · from $99" },
+];
+
+export function Hero() {
   return (
     <section
-      ref={ref}
       id="top"
-      className="relative isolate flex min-h-[100svh] flex-col items-center justify-start overflow-hidden pt-32 sm:pt-36"
+      className="relative isolate overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40"
     >
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-[80%] bg-gradient-to-b from-primary-soft via-white to-white"
+        className="absolute inset-x-0 top-0 -z-10 h-[85%] bg-gradient-to-b from-primary-soft via-background to-background"
       />
 
-      <motion.div
-        style={{ opacity: fade }}
-        className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center"
-      >
+      <div className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80 backdrop-blur"
+          transition={{ duration: 0.6, ease }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-1.5 text-xs font-medium tracking-wide text-foreground/80 backdrop-blur"
         >
           <MapPin className="h-3 w-3 text-primary-dark" strokeWidth={2.25} />
-          {site.location.area} · By appointment only
+          South Bronx · Near Yankee Stadium · By appointment only
         </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="display-text text-5xl font-semibold text-foreground sm:text-7xl lg:text-[96px]"
+          transition={{ duration: 0.9, ease }}
+          className="display-text text-5xl font-semibold text-foreground sm:text-7xl lg:text-[88px]"
         >
           A brighter smile.
           <br />
-          <span className="bg-gradient-to-b from-primary-dark to-foreground bg-clip-text text-transparent">
-            In one visit.
-          </span>
+          <span className="italic text-primary-dark">In one visit.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.15, ease }}
           className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
         >
-          Professional, enamel-safe teeth whitening in a private South Bronx studio &mdash;
-          up to fourteen shades brighter in one visit. Plus tooth gems, with grillz on the
-          way.
+          Professional, enamel-safe LED teeth whitening in a private South Bronx
+          studio — up to fourteen shades brighter in a single sensitivity-free
+          session.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.3, ease }}
           className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
         >
           <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
             <Button size="lg">
-              Book a Session
+              Book Your Whitening
               <ArrowRight className="h-4 w-4" />
             </Button>
           </a>
@@ -81,36 +76,42 @@ export function Hero() {
             </Button>
           </a>
         </motion.div>
-      </motion.div>
+
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.45, ease }}
+          className="mt-10 flex flex-col items-center gap-3 text-sm text-muted sm:flex-row sm:gap-8"
+        >
+          {trust.map(({ icon: Icon, label }) => (
+            <li key={label} className="flex items-center gap-2">
+              <Icon className="h-4 w-4 text-primary-dark" strokeWidth={2} />
+              {label}
+            </li>
+          ))}
+        </motion.ul>
+      </div>
 
       <motion.div
-        style={{ y, scale }}
-        className="relative mt-20 w-full"
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.35, ease }}
+        className="relative mx-auto mt-16 w-full max-w-3xl px-6"
       >
-        <LampContainer className="h-[760px] min-h-0 rounded-none">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
-            className="flex flex-col items-center"
-          >
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-cyan-300 backdrop-blur">
-              <Sparkles className="h-3 w-3" strokeWidth={2.25} />
-              Professional teeth whitening
-            </span>
-            <h2 className="bg-gradient-to-br from-slate-100 to-slate-400 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-              Up to 14 shades brighter.
-            </h2>
-            <p className="mt-5 max-w-xl text-center text-base leading-relaxed text-slate-400 md:text-lg">
-              Pro-grade LED and an enamel-safe gel in a calm, private studio &mdash; dramatic,
-              sensitivity-free results from your very first visit.
-            </p>
-          </motion.div>
-        </LampContainer>
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white"
+          className="absolute inset-x-16 top-8 -z-10 h-3/4 rounded-full bg-primary/15 blur-3xl"
         />
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-b-3xl rounded-t-[10rem] border border-border bg-primary-soft sm:rounded-t-[14rem]">
+          <Image
+            src="/images/service-whitening.webp"
+            alt="A confident, bright white smile after a professional teeth whitening session at Lumen in the South Bronx"
+            fill
+            priority
+            sizes="(min-width: 1024px) 720px, 100vw"
+            className="object-cover"
+          />
+        </div>
       </motion.div>
     </section>
   );

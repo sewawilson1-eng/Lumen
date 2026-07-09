@@ -63,7 +63,7 @@ export function BeforeAfterSlider() {
           >
             <Image
               src={AFTER}
-              alt="After whitening: a brighter smile"
+              alt="After professional teeth whitening at Lumen: a noticeably brighter, whiter smile"
               fill
               sizes="(min-width: 1024px) 896px, 100vw"
               className="object-cover"
@@ -75,7 +75,7 @@ export function BeforeAfterSlider() {
             >
               <Image
                 src={BEFORE}
-                alt="Before whitening: a dimmer smile"
+                alt="Before teeth whitening: natural tooth shade with visible staining"
                 fill
                 sizes="(min-width: 1024px) 896px, 100vw"
                 className="object-cover"

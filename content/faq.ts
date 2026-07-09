@@ -10,6 +10,16 @@ export const faqs: FAQItem[] = [
       "Most clients leave four to ten shades brighter in a single visit. The result depends on starting shade, enamel porosity, and which session you choose. The Deluxe session can deliver up to fourteen shades.",
   },
   {
+    question: "How much does professional teeth whitening cost in the Bronx?",
+    answer:
+      "Lumen's launch pricing starts at $99 for a 45-minute Essential session, $119 for the 60-minute Signature, and $139 for the 90-minute Deluxe — professional LED whitening in the 10451 area at a fraction of typical NYC dental-office prices, with no hidden fees.",
+  },
+  {
+    question: "Can I book a same-day whitening appointment near me?",
+    answer:
+      "Often, yes. Our booking page shows real-time availability, including same-day openings when the chair is free. The studio is steps from 161st St – Yankee Stadium (4/B/D), an easy trip from anywhere in the Bronx or Upper Manhattan.",
+  },
+  {
     question: "Where is the studio?",
     answer:
       "A private, single-client studio in the South Bronx — steps from the 4 / B / D at 161st Street – Yankee Stadium. The exact address is shared by email once your appointment is confirmed.",

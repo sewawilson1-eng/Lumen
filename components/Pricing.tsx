@@ -34,8 +34,8 @@ export function Pricing() {
               className={cn(
                 "flex flex-col rounded-3xl p-8 sm:p-10",
                 tier.highlighted
-                  ? "border-2 border-primary bg-white"
-                  : "border border-border bg-white"
+                  ? "border-2 border-primary bg-background"
+                  : "border border-border bg-background"
               )}
             >
               <div className="flex items-baseline justify-between gap-3">
@@ -45,7 +45,7 @@ export function Pricing() {
                     className={cn(
                       "rounded-full px-3 py-1 text-xs font-medium",
                       tier.highlighted
-                        ? "bg-primary text-white"
+                        ? "bg-primary-dark text-white"
                         : "bg-primary-soft text-primary-dark"
                     )}
                   >

@@ -7,7 +7,7 @@ import { images } from "@/content/images";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white py-16">
+    <footer className="border-t border-border bg-background py-16">
       <Container>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
@@ -44,7 +44,7 @@ export function Footer() {
 
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-semibold text-foreground">{col.title}</h4>
+              <h3 className="text-sm font-semibold text-foreground">{col.title}</h3>
               <ul className="mt-4 space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
