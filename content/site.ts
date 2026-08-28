@@ -16,8 +16,8 @@ export const site = {
    * The footer link, Location "Get directions" button, and structured data
    * all pick them up automatically — leave as "" to hide.
    */
-  tiktok: "" as string,
-  googleMapsUrl: "" as string,
+  tiktok: "https://www.tiktok.com/@charlemagnew" as string,
+  googleMapsUrl: "https://share.google/5hlXBhLI9sUWDznez" as string,
   location: {
     area: "South Bronx, NYC",
     privacyNote: "Full studio address shared once your appointment is confirmed.",
