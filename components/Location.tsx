@@ -1,7 +1,13 @@
-import { MapPin, Lock, Train, CalendarCheck } from "lucide-react";
+import { MapPin, Lock, Train, CalendarCheck, ExternalLink } from "lucide-react";
 import { Container } from "@/components/primitives/Container";
 import { FadeUp } from "@/components/primitives/FadeUp";
+import { Button } from "@/components/primitives/Button";
 import { site } from "@/content/site";
+
+// Directions land on the public transit landmark, never the private address.
+const directionsUrl =
+  site.googleMapsUrl ||
+  "https://www.google.com/maps/search/?api=1&query=161st+St+Yankee+Stadium+Station+Bronx+NY";
 
 export function Location() {
   return (
@@ -60,6 +66,19 @@ export function Location() {
                 </div>
               </li>
             </ul>
+
+            <a
+              href={directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-block"
+            >
+              <Button size="md" variant="ghost">
+                <MapPin className="h-4 w-4" />
+                {site.googleMapsUrl ? "Find us on Google Maps" : "Get directions to the station"}
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Button>
+            </a>
           </FadeUp>
 
           <FadeUp delay={0.1} className="relative">

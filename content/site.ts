@@ -10,6 +10,14 @@ export const site = {
   email: "hello@lumenteeth.com",
   instagram: "https://www.instagram.com/lumen.smile/",
   facebook: "https://www.facebook.com/people/Lumensmile/61590348946136/",
+  /**
+   * Paste your TikTok profile URL (e.g. https://www.tiktok.com/@lumen.smile)
+   * and your Google Business Profile / Maps listing URL when you have them.
+   * The footer link, Location "Get directions" button, and structured data
+   * all pick them up automatically — leave as "" to hide.
+   */
+  tiktok: "" as string,
+  googleMapsUrl: "" as string,
   location: {
     area: "South Bronx, NYC",
     privacyNote: "Full studio address shared once your appointment is confirmed.",

@@ -58,7 +58,10 @@ export function StructuredData() {
       "Enamel-safe whitening",
       "Teeth whitening aftercare",
     ],
-    sameAs: [site.instagram, site.facebook],
+    sameAs: [site.instagram, site.facebook, site.tiktok, site.googleMapsUrl].filter(
+      Boolean
+    ),
+    ...(site.googleMapsUrl ? { hasMap: site.googleMapsUrl } : {}),
     potentialAction: {
       "@type": "ReserveAction",
       target: {
