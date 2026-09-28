@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { CandidateQuiz } from "@/components/CandidateQuiz";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { SmileGallery } from "@/components/SmileGallery";
+import { Testimonials } from "@/components/Testimonials";
 import { Location } from "@/components/Location";
 import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <HowItWorks />
         <BeforeAfterSlider />
         <SmileGallery />
+        <Testimonials />
         <CandidateQuiz />
         <Location />
         <Pricing />

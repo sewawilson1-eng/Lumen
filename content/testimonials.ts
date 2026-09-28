@@ -1,0 +1,47 @@
+/**
+ * Client testimonials — verbatim excerpts from Lumen's Google reviews,
+ * trimmed only at sentence boundaries. Never edit a quote's wording.
+ *
+ * Update `reviewSummary` whenever the Google rating or count changes.
+ */
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+};
+
+export const reviewSummary = {
+  rating: "5.0",
+  count: 47,
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "…the atmosphere was calming and soothing, I felt like I was about to get a massage. Sewa was the ultimate professional. He walked me through everything he did.",
+    name: "Patricia W.",
+  },
+  {
+    quote:
+      "Amazing experience! I felt really comfortable and at ease, even though I have a bit of dental phobia. There’s definitely a noticeable difference in the whiteness of my teeth and the stains are gone.",
+    name: "Mia M.",
+  },
+  {
+    quote:
+      "He walked me through the process as this was my first time having my teeth whitened & I was pleasantly surprised. He has amazing chair side manners & a super cozy environment.",
+    name: "Erika F.",
+  },
+  {
+    quote:
+      "He did an incredible job, and everything was perfect from start to finish. My teeth look amazing, and I’m so happy with the results.",
+    name: "Teana J.",
+  },
+  {
+    quote: "Great customer service and I’m loving the results so far.",
+    name: "Nancy A.",
+  },
+  {
+    quote: "Charlemagne was great! … I love my results as well.",
+    name: "Oasiah",
+  },
+];
