@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { OwnLane } from "@/components/OwnLane";
 import { ScienceGrid } from "@/components/ScienceGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CandidateQuiz } from "@/components/CandidateQuiz";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Nav />
       <main id="main">
         <Hero />
+        <OwnLane />
         <ScienceGrid />
         <HowItWorks />
         <BeforeAfterSlider />

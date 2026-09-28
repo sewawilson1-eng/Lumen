@@ -5,6 +5,11 @@ export type FAQItem = {
 
 export const faqs: FAQItem[] = [
   {
+    question: "Is Lumen a dental office?",
+    answer:
+      "No. Lumen is a cosmetic teeth whitening studio, not a dental practice. We don't diagnose, treat, or replace your dentist, so please keep up with your regular dental checkups. What we offer is a calm, private whitening session with a professional peroxide gel and LED light, focused entirely on brightening your smile.",
+  },
+  {
     question: "How many shades whiter will I get?",
     answer:
       "Most clients leave four to ten shades brighter in a single visit. The result depends on starting shade, enamel porosity, and which session you choose. The Deluxe session can deliver up to fourteen shades.",
