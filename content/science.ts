@@ -10,8 +10,8 @@ export type ScienceCard = {
 export const scienceCards: ScienceCard[] = [
   {
     icon: FlaskConical,
-    title: "44% hydrogen peroxide gel",
-    body: "A high-concentration professional-grade bleaching gel — far stronger than anything available over the counter, applied precisely by a trained specialist.",
+    title: "Professional peroxide gel",
+    body: "I'll guide you through every step of your whitening session — from your shade check to aftercare — using a professional peroxide gel, applied with care.",
   },
   {
     icon: Zap,

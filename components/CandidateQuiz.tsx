@@ -43,7 +43,7 @@ const questions: Question[] = [
   },
   {
     question: "What kind of staining are you looking to remove?",
-    subtext: "Our 44% hydrogen peroxide gel targets all of these.",
+    subtext: "Our professional peroxide gel targets all of these.",
     reinforcement: "You're on the right track — we handle this every day.",
     options: [
       { label: "Coffee or tea stains", score: 2 },
