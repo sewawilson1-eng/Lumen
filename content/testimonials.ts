@@ -11,7 +11,7 @@ export type Testimonial = {
 };
 
 export const reviewSummary = {
-  label: "100s of happy clients",
+  label: "100+ happy clients",
 };
 
 export const testimonials: Testimonial[] = [
