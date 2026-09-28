@@ -20,7 +20,6 @@ export default function HomePage() {
       <Nav />
       <main id="main">
         <Hero />
-        <OwnLane />
         <ScienceGrid />
         <HowItWorks />
         <BeforeAfterSlider />
@@ -28,6 +27,7 @@ export default function HomePage() {
         <CandidateQuiz />
         <Location />
         <Pricing />
+        <OwnLane />
         <FAQ />
         <AreasServed />
         <FinalCTA />
