@@ -53,14 +53,14 @@ export function Pricing() {
                   </span>
                 )}
               </div>
-              <div className="mt-6 flex items-baseline gap-2">
+              <div className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <span className="text-5xl font-semibold tracking-tight text-foreground">
                   {tier.price}
                 </span>
                 <span className="text-lg text-muted line-through decoration-from-font">
                   {tier.originalPrice}
                 </span>
-                <span className="ml-1 text-sm text-muted">{tier.cadence}</span>
+                <span className="ml-1 whitespace-nowrap text-sm text-muted">{tier.cadence}</span>
               </div>
               <p className="mt-2 inline-block w-fit rounded-md bg-primary-soft px-2 py-0.5 text-xs font-semibold text-primary-dark">
                 {tier.savings}

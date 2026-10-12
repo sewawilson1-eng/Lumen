@@ -26,7 +26,7 @@ export function StructuredData() {
     image: `${SITE_URL}/opengraph-image`,
     logo: `${SITE_URL}/images/logo.png`,
     email: site.email,
-    priceRange: "$99–$139",
+    priceRange: "$99–$199",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
     address: {
@@ -94,7 +94,7 @@ export function StructuredData() {
         {
           "@type": "Offer",
           priceCurrency: "USD",
-          price: "119",
+          price: "149",
           itemOffered: {
             "@type": "Service",
             name: "Signature Whitening — 60 minutes",
@@ -107,7 +107,7 @@ export function StructuredData() {
         {
           "@type": "Offer",
           priceCurrency: "USD",
-          price: "139",
+          price: "199",
           itemOffered: {
             "@type": "Service",
             name: "Deluxe Whitening — 90 minutes",

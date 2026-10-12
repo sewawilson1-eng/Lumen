@@ -14,9 +14,9 @@ export type PricingTier = {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Essential",
-    originalPrice: "$149",
+    originalPrice: "$199",
     price: "$99",
-    savings: "Save $50",
+    savings: "Save $100",
     cadence: "45 min session",
     description:
       "A quick 45-minute touch-up for clients with already-bright teeth. The maintenance session between full visits.",
@@ -33,9 +33,9 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Signature",
-    originalPrice: "$199",
-    price: "$119",
-    savings: "Save $80",
+    originalPrice: "$349",
+    price: "$149",
+    savings: "Save $200",
     cadence: "60 min session",
     description:
       "The everyday upgrade. Two full LED cycles for photo-ready results in an hour.",
@@ -52,9 +52,9 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Deluxe",
-    originalPrice: "$249",
-    price: "$139",
-    savings: "Save $110",
+    originalPrice: "$549",
+    price: "$199",
+    savings: "Save $350",
     cadence: "90 min session",
     description:
       "Recommended for first visits. Three full LED cycles for the most dramatic single-visit transformation.",

@@ -32,16 +32,16 @@ Google's guidelines and risks suspension.)
 
 ## Services (add under the "Services" tab)
 
-**Essential Whitening — $99** *(reg. $149)*
+**Essential Whitening — $99** *(reg. $199)*
 > A quick 45-minute professional touch-up. One LED cycle with shade reading
 > and lip & gum protection — up to 4–6 shades brighter. Perfect before an
 > event or between full sessions.
 
-**Signature Whitening — $119** *(reg. $199)*
+**Signature Whitening — $149** *(reg. $349)*
 > Our most popular session. Two LED cycles in 60 minutes for photo-ready
 > results — up to 6–10 shades brighter. Enamel-safe and sensitivity-free.
 
-**Deluxe Whitening — $139** *(reg. $249)*
+**Deluxe Whitening — $199** *(reg. $549)*
 > Best for first visits. Three full LED cycles over 90 minutes for the most
 > dramatic single-visit transformation — up to 8–14 shades brighter, with
 > aftercare guidance included.

@@ -23,11 +23,11 @@ visit.
 ### Business facts (always accurate, never improvise these)
 
 - **Sessions & launch pricing:**
-  - Essential — $99 (was $149) · 45 min · 1 LED cycle · up to 4–6 shades ·
+  - Essential — $99 (was $199) · 45 min · 1 LED cycle · up to 4–6 shades ·
     the quick professional touch-up
-  - Signature — $119 (was $199) · 60 min · 2 LED cycles · up to 6–10 shades ·
+  - Signature — $149 (was $349) · 60 min · 2 LED cycles · up to 6–10 shades ·
     most popular
-  - Deluxe — $139 (was $249) · 90 min · 3 LED cycles · up to 8–14 shades ·
+  - Deluxe — $199 (was $549) · 90 min · 3 LED cycles · up to 8–14 shades ·
     best for first visits
   - All sessions: enamel-safe gel + blue LED, sensitivity-free, shade reading,
     lip & gum protection, aftercare guidance. Returning clients: 15% off a
